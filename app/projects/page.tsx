@@ -3,7 +3,7 @@ import { ArrowLeft, Download } from "lucide-react";
 import ThemeToggle from "../theme-toggle";
 import ProjectCarousel from "./project-carousel";
 
-const projects = [
+export const projects = [
   {
     title: "Robotic Nailer Clamp",
     organization: "Sonoco · 2026",
@@ -72,7 +72,7 @@ const projects = [
     resultLabel: "injection-moldable housing",
     image: sitePath("/projects/linear-conveyor.jpg"),
     alt: "Completed VEX linear conveyor prototype",
-    images: [{src:sitePath("/projects/linear-conveyor.jpg"),alt:"Completed VEX linear conveyor prototype"},{src:sitePath("/projects/gallery/conveyor-cad.png"),alt:"Collapsed CAD view of the linear conveyor"},{src:sitePath("/projects/gallery/conveyor-exploded.png"),alt:"Exploded CAD view of the linear conveyor"}],
+    images: [{src:sitePath("/projects/linear-conveyor.jpg"),alt:"Completed VEX linear conveyor prototype"},{src:sitePath("/projects/gallery/conveyor-original.jpg"),alt:"Original linear conveyor design"},{src:sitePath("/projects/gallery/conveyor-cad.png"),alt:"Collapsed CAD view of the linear conveyor"},{src:sitePath("/projects/gallery/conveyor-exploded.png"),alt:"Exploded CAD view of the linear conveyor"},{src:sitePath("/assembly-timelapse.mp4"),alt:"Time lapse of Elijah assembling the conveyor",video:true}],
   },
   {
     title: "Inclined Conveyor",

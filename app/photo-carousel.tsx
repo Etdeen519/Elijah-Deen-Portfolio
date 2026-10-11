@@ -6,9 +6,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   { type: "image" as const, src: sitePath("/elijah-portrait.jpg"), alt: "Portrait of Elijah Deen", width: 1365, height: 2048 },
-  { type: "image" as const, src: sitePath("/hero-welding-close.png"), alt: "Elijah welding a steel fixture at Sonoco", width: 820, height: 1761 },
   { type: "image" as const, src: sitePath("/hero-welding.png"), alt: "Elijah welding a steel fixture at Sonoco", width: 1179, height: 2019 },
   { type: "image" as const, src: sitePath("/hero-vex.png"), alt: "Elijah working on a robotics assembly at VEX", width: 516, height: 437 },
+  { type: "image" as const, src: sitePath("/projects/gallery/conveyor-original.jpg"), alt: "Original linear conveyor design", width: 420, height: 328 },
   { type: "video" as const, src: sitePath("/assembly-timelapse.mp4"), alt: "Timelapse of Elijah assembling a project" },
 ];
 

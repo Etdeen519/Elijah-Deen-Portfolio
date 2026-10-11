@@ -1,14 +1,9 @@
 import { sitePath } from "./site-path";
-import { ArrowDownRight, ArrowUpRight, Box, Download, Factory, Gauge, Hammer, Layers3, MapPin, MoveUpRight, Ruler, Wrench } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Box, Download, Hammer, MapPin, Ruler, Wrench } from "lucide-react";
 import PhotoCarousel from "./photo-carousel";
 import ThemeToggle from "./theme-toggle";
-
-const projects = [
-  { number:"01", type:"PROCESS IMPROVEMENT · SONOCO", title:"Rear Axle Truck Scale", summary:"Designed and fabricated a four-bar scale mechanism that gives operators an objective measurement of trailer payload.", tags:["Machine Design","Fabrication","Testing"], result:"$34.5K", resultLabel:"projected annual savings", image:sitePath("/projects/truck-scale.png"), alt:"CAD model of the rear axle truck scale", icon:Gauge },
-  { number:"02", type:"FABRICATION · SONOCO", title:"Half Stacker", summary:"Designed, fabricated, painted, and installed a fixture that keeps partial lumber bundles contained during restacking.", tags:["3-Day Build","Welding","Operator Feedback"], result:"69%", resultLabel:"estimated time reduction", image:sitePath("/projects/half-stacker.jpg"), alt:"Half stacker holding a bundle of lumber in the plant", icon:Layers3 },
-  { number:"03", type:"PRODUCT DEVELOPMENT · VEX ROBOTICS", title:"Integrated Motor Conveyor", summary:"Redesigned an educational robotics conveyor around an internal motor and gearbox with production assembly in mind.", tags:["SolidWorks","DFM","DFA"], result:"3 PARTS", resultLabel:"injection-moldable housing", image:sitePath("/projects/linear-conveyor.jpg"), alt:"Completed prototype of the VEX linear conveyor", icon:MoveUpRight },
-  { number:"04", type:"MANUFACTURING · SONOCO", title:"Bandsaw Dust Collection", summary:"Developed a source-capture nozzle through rapid prototypes and airflow testing, then prepared the final sheet-metal design.", tags:["Airflow","Testing","Sheet Metal"], result:"4 BUILDS", resultLabel:"iterative prototypes", image:sitePath("/projects/bandsaw-collector.jpg"), alt:"Fabricated prototype for the bandsaw dust collector", icon:Factory },
-];
+import ProjectCarousel from "./projects/project-carousel";
+import { projects } from "./projects/page";
 
 const experience = [
   ["2026","Sonoco Products Company","Mechanical Engineering Co-op","Machine design and automation · Hartselle, Alabama"],
@@ -28,7 +23,7 @@ export default function Home() {
   return <main>
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="Elijah Deen, home">ED<span>/</span>ME</a>
-      <nav aria-label="Primary navigation"><a href="#work">Work</a><a href={sitePath("/projects/")}>All projects</a><a href="#experience">Experience</a></nav>
+      <nav aria-label="Primary navigation"><a href="#work">Work</a><a href="#work">Projects</a><a href="#experience">Experience</a></nav>
       <div className="header-actions"><ThemeToggle/><a className="header-cta" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">Resume <Download size={16}/></a></div>
     </header>
 
@@ -37,9 +32,9 @@ export default function Home() {
       <div className="hero-copy">
         <p className="eyebrow"><span/> Mechanical engineering student at Texas A&amp;M</p>
         <h1>Elijah<br/><em>Deen</em></h1>
-        <p className="hero-intro">I like making new things and solving problems by building something better.</p>
+        <p className="hero-intro">{/* Add Elijah’s introduction paragraph here. */}</p>
         <div className="hero-actions">
-          <a className="button button-primary" href="#work">View selected work <ArrowDownRight size={18}/></a>
+          <a className="button button-primary" href="#work">View projects <ArrowDownRight size={18}/></a>
           <a className="text-link" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">View resume <ArrowUpRight size={16}/></a>
         </div>
       </div>
@@ -51,18 +46,9 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="section projects" id="work">
-      <div className="section-heading"><p className="section-index">01 / SELECTED WORK</p><h2>Projects built around<br/>real constraints.</h2><p>From factory equipment to educational robotics, each project moved from a rough problem to a physical, testable solution.</p></div>
-      <div className="project-list">{projects.map(project => {
-        const Icon=project.icon;
-        const slug=project.title.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
-        return <a className="project-card" href={sitePath(`/projects/?project=${slug}#project-carousel`)} key={project.number} aria-label={`View ${project.title} in all projects`}>
-          <div className="project-image"><img src={project.image} alt={project.alt}/><div className="project-top"><span className="project-number">{project.number}</span><Icon size={24} strokeWidth={1.5}/></div></div>
-          <div className="project-body"><p className="project-type">{project.type}</p><h3>{project.title}</h3><p className="project-summary">{project.summary}</p>
-          <div className="project-bottom"><div className="tag-row">{project.tags.map(tag=><span key={tag}>{tag}</span>)}</div><div className="project-result"><strong>{project.result}</strong><span>{project.resultLabel}</span></div></div></div>
-        </a>;
-      })}</div>
-      <div className="all-projects-cta"><p>More work in robotics, machine design, fabrication, and thermal systems.</p><a className="button button-primary" href={sitePath("/projects/")}>Explore all projects <ArrowUpRight size={18}/></a></div>
+    <section className="home-projects" id="work">
+      <div className="home-projects-heading"><p className="section-index">01 / PROJECTS</p><h2>Projects.</h2></div>
+      <ProjectCarousel projects={projects}/>
     </section>
 
     <section className="section experience" id="experience">
