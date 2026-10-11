@@ -35,7 +35,7 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
 
   return <section className="project-carousel-section" id="project-carousel" aria-label="Browse all projects">
     <div className="project-carousel-heading">
-      <div><span className="project-carousel-kicker">ALL PROJECTS</span><p>{String(projectIndex + 1).padStart(2, "0")} <span>/ {String(projects.length).padStart(2, "0")}</span></p></div>
+      <div><span className="project-carousel-kicker">PROJECTS</span><p>{String(projectIndex + 1).padStart(2, "0")} <span>/ {String(projects.length).padStart(2, "0")}</span></p></div>
       <div className="project-switcher" aria-label="Project controls">
         <button type="button" onClick={() => changeProject(-1)} aria-label="Previous project"><ChevronLeft size={26}/></button>
         <button type="button" onClick={() => changeProject(1)} aria-label="Next project"><ChevronRight size={26}/></button>
@@ -65,7 +65,7 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
       </div>
     </article>
     <div className="project-rail" aria-label="Choose a project">
-      {projects.map((item, index) => <button type="button" key={item.title} className={index === projectIndex ? "active" : ""} onClick={() => {setProjectIndex(index);setImageIndex(0)}} aria-label={`Show ${item.title}`} aria-current={index === projectIndex ? "true" : undefined}><span/></button>)}
+      {projects.map((item, index) => <button type="button" key={item.title} className={index === projectIndex ? "active" : ""} onClick={() => {setProjectIndex(index);setImageIndex(0)}} aria-label={`Show ${item.title}`} aria-current={index === projectIndex ? "true" : undefined}><span className="project-tab-line"/><span className="project-tab-label" aria-hidden="true">{item.title}</span></button>)}
     </div>
     <p className="project-rail-hint">Use the large arrows to browse projects. Media controls appear when a project has multiple views.</p>
   </section>;

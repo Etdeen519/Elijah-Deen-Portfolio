@@ -140,7 +140,7 @@ h1 em,footer h2 em{font-family:Georgia,serif;font-weight:400;color:var(--maroon-
 .project-feature-copy{min-width:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(24px,3vw,42px);overflow-y:auto}
 .project-feature-copy h2{font-size:clamp(2.1rem,3vw,3.6rem);line-height:1.02;letter-spacing:-.055em;margin:12px 0 20px}
 .project-feature-copy>p{font-size:1rem;line-height:1.55;color:var(--muted);max-width:550px;margin-bottom:26px}
-.project-rail{max-width:1120px;margin:18px auto 0;display:flex;gap:6px}.project-rail button{flex:1;padding:8px 0;border:0;background:none;cursor:pointer}.project-rail button span{display:block;height:4px;background:var(--line);transition:background .2s,height .2s}.project-rail button.active span{height:6px;background:var(--maroon-soft)}.project-rail button:hover span{background:var(--maroon-bright)}
+.project-rail{max-width:1120px;margin:18px auto 0;display:flex;gap:6px}.project-rail button{flex:1;padding:8px 0;border:0;background:none;cursor:pointer}.project-rail button .project-tab-line{display:block;height:4px;background:var(--line);transition:background .2s,height .2s}.project-rail button.active .project-tab-line{height:6px;background:var(--maroon-soft)}.project-rail button:hover .project-tab-line{background:var(--maroon-bright)}
 .project-rail-hint{max-width:1120px;margin:8px auto 0;color:var(--muted);font-size:.76rem}
 .project-carousel-section button:focus-visible{outline:2px solid var(--maroon-soft);outline-offset:3px}
 
@@ -227,3 +227,22 @@ footer .section-index{color:#e2b9bf}footer h2{font-size:clamp(3.2rem,7vw,8rem);m
   .home-projects .project-rail{margin-top:9px}
 }
 @media(max-width:640px){.hero h1{font-size:clamp(2.75rem,11.5vw,5rem)}}
+
+/* Title the section in the carousel controls, leaving more height for media. */
+.home-projects .project-carousel-kicker{display:block}
+.home-projects .project-carousel-heading{align-items:center}
+.home-projects .project-carousel-heading p{margin-top:5px}
+@media(min-width:901px){
+  .home-projects{padding-top:clamp(14px,2.5vh,28px)}
+  .home-projects .project-carousel-section{padding-top:0;padding-bottom:16px}
+  .home-projects .project-feature{height:clamp(450px,calc(100svh - 230px),760px)}
+}
+.project-rail button{position:relative;z-index:1}
+.project-rail button:hover,.project-rail button:focus-visible{z-index:3}
+.project-rail button .project-tab-label{position:absolute;bottom:100%;left:50%;width:max-content;max-width:min(260px,80vw);height:auto;display:block;padding:9px 12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:700 .75rem/1.25 "Courier New",monospace;white-space:normal;text-align:center;box-shadow:0 10px 26px rgba(0,0,0,.24);opacity:0;transform:translate(-50%,5px);transition:opacity .2s ease,transform .2s ease;pointer-events:none}
+.project-rail button:hover .project-tab-label,.project-rail button:focus-visible .project-tab-label{opacity:1;transform:translate(-50%,-8px)}
+.project-rail button:first-child .project-tab-label{left:0;transform:translate(0,5px)}
+.project-rail button:first-child:hover .project-tab-label,.project-rail button:first-child:focus-visible .project-tab-label{transform:translate(0,-8px)}
+.project-rail button:last-child .project-tab-label{left:auto;right:0;transform:translate(0,5px)}
+.project-rail button:last-child:hover .project-tab-label,.project-rail button:last-child:focus-visible .project-tab-label{transform:translate(0,-8px)}
+@media(max-width:900px){.home-projects{padding-top:22px}.home-projects .project-carousel-section{padding-top:0}}

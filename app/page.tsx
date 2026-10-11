@@ -47,7 +47,6 @@ export default function Home() {
     </section>
 
     <section className="home-projects" id="work">
-      <div className="home-projects-heading"><p className="section-index">01 / PROJECTS</p><h2>Projects.</h2></div>
       <ProjectCarousel projects={projects}/>
     </section>
 
