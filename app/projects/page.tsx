@@ -3,16 +3,23 @@ import { ArrowLeft, Download } from "lucide-react";
 import ThemeToggle from "../theme-toggle";
 import ProjectCarousel from "./project-carousel";
 
+
+
 export const projects = [
   {
-    title: "Robotic Nailer Clamp",
+    title: "Automated Nailer Clamp",
     organization: "Sonoco · 2026",
     category: "Machine Design",
-    description: "Developing a compact pneumatic clamp that aligns uneven wooden reel flanges as they enter an automated nailer.",
+    description: "Designed and fabricated a compact pneumatic clamp to align uneven wooden reel flanges as they enter an automated nailer.",
     skills: ["Inventor", "Pneumatics", "FEA"],
     result: "IN PROGRESS",
     resultLabel: "±0.1 in alignment target",
-    images: [],
+    images: [
+      {src:sitePath("/projects/gallery/clamp-close-iso.jpeg"),alt:"Fabricated automated nailer clamp from above"},
+      {src:sitePath("/projects/gallery/clamp-on-introducer.jpeg"),alt:"Automated nailer clamp installed on the introducer"},
+      {src:sitePath("/projects/gallery/clamp-portrait.mp4"),alt:"Short portrait video of the automated nailer clamp",video:true},
+      {src:sitePath("/projects/gallery/clamp-first-video.mp4"),alt:"Automated nailer clamp operation video",video:true},
+    ],
   },
   {
     title: "Rear Axle Truck Scale",

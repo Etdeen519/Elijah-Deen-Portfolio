@@ -198,9 +198,14 @@ footer .section-index{color:#e2b9bf}footer h2{font-size:clamp(3.2rem,7vw,8rem);m
 @media(max-width:640px){.projects-hero{padding-top:42px;padding-bottom:38px}.back-link{margin-bottom:28px}.project-carousel-section{padding-bottom:55px}.project-feature-media{height:clamp(270px,78vw,360px)}.project-feature-media>img,.project-feature-media>video{inset:12px 12px 60px;width:calc(100% - 24px);height:calc(100% - 72px)}.project-feature-copy{padding:24px}.project-feature-copy h2{font-size:2.2rem}.project-switcher button{width:48px;height:46px}.project-rail-hint{line-height:1.5}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
-/* The complete project gallery lives on the home page. */
-.hero-intro:empty{min-height:2.5em}
+/* Complete project gallery on the home page. */
 .home-projects{background:var(--surface);scroll-margin-top:82px;padding-top:clamp(60px,7vw,100px)}
 .home-projects-heading{max-width:1120px;margin:0 auto;padding:0 clamp(20px,6vw,90px)}
 .home-projects-heading h2{font-size:clamp(2.8rem,5vw,5.5rem);line-height:1;letter-spacing:-.055em;margin:0}
 .home-projects .project-carousel-section{padding-top:38px}
+/* Hold the paragraph space shown in Elijah's layout sketch. */
+.hero h1{max-width:none;white-space:nowrap;font-size:clamp(2.8rem,4vw,5.8rem)}
+.hero-intro:empty{min-height:clamp(110px,15vh,185px);margin-bottom:0}
+.hero-actions{margin-top:22px}
+@media(max-width:900px){.hero h1{font-size:clamp(3.1rem,8vw,6.5rem)}}
+@media(max-width:640px){.hero h1{font-size:clamp(2.55rem,10.5vw,5rem)}.hero-intro:empty{min-height:110px}}

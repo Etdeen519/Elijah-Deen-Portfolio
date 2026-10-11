@@ -23,7 +23,7 @@ export default function Home() {
   return <main>
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="Elijah Deen, home">ED<span>/</span>ME</a>
-      <nav aria-label="Primary navigation"><a href="#work">Work</a><a href="#work">Projects</a><a href="#experience">Experience</a></nav>
+      <nav aria-label="Primary navigation"><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#about">About</a></nav>
       <div className="header-actions"><ThemeToggle/><a className="header-cta" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">Resume <Download size={16}/></a></div>
     </header>
 
@@ -31,7 +31,7 @@ export default function Home() {
       <div className="hero-grid" aria-hidden="true"/>
       <div className="hero-copy">
         <p className="eyebrow"><span/> Mechanical engineering student at Texas A&amp;M</p>
-        <h1>Elijah<br/><em>Deen</em></h1>
+        <h1>Elijah <em>Deen</em></h1>
         <p className="hero-intro">{/* Add Elijah’s introduction paragraph here. */}</p>
         <div className="hero-actions">
           <a className="button button-primary" href="#work">View projects <ArrowDownRight size={18}/></a>
