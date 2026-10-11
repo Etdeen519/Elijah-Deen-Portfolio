@@ -209,3 +209,21 @@ footer .section-index{color:#e2b9bf}footer h2{font-size:clamp(3.2rem,7vw,8rem);m
 .hero-actions{margin-top:22px}
 @media(max-width:900px){.hero h1{font-size:clamp(3.1rem,8vw,6.5rem)}}
 @media(max-width:640px){.hero h1{font-size:clamp(2.55rem,10.5vw,5rem)}.hero-intro:empty{min-height:110px}}
+
+/* Give the home gallery a full viewport while keeping its heading visible. */
+@media(min-width:901px){
+  .hero h1{font-size:clamp(3.3rem,5.4vw,7.2rem)}
+  .home-projects{padding-top:clamp(16px,2.5vh,30px)}
+  .home-projects-heading{max-width:1400px;display:flex;align-items:baseline;gap:24px;padding-inline:clamp(20px,4vw,64px)}
+  .home-projects-heading .section-index{margin:0}
+  .home-projects-heading h2{font-size:clamp(2.25rem,3.4vw,3.3rem)}
+  .home-projects .project-carousel-section{padding:12px clamp(20px,4vw,64px) 20px}
+  .home-projects .project-carousel-heading,.home-projects .project-feature,.home-projects .project-rail{max-width:1400px}
+  .home-projects .project-carousel-heading{margin-bottom:10px}
+  .home-projects .project-carousel-kicker,.home-projects .project-rail-hint{display:none}
+  .home-projects .project-carousel-heading p{margin:0}
+  .home-projects .project-feature{grid-template-columns:minmax(0,1.55fr) minmax(300px,.7fr);height:clamp(390px,calc(100svh - 320px),680px)}
+  .home-projects .project-feature-media>img,.home-projects .project-feature-media>video{inset:12px 12px 54px;width:calc(100% - 24px);height:calc(100% - 66px)}
+  .home-projects .project-rail{margin-top:9px}
+}
+@media(max-width:640px){.hero h1{font-size:clamp(2.75rem,11.5vw,5rem)}}
