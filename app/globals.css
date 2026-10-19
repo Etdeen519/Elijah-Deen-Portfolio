@@ -246,3 +246,95 @@ footer .section-index{color:#e2b9bf}footer h2{font-size:clamp(3.2rem,7vw,8rem);m
 .project-rail button:last-child .project-tab-label{left:auto;right:0;transform:translate(0,5px)}
 .project-rail button:last-child:hover .project-tab-label,.project-rail button:last-child:focus-visible .project-tab-label{transform:translate(0,-8px)}
 @media(max-width:900px){.home-projects{padding-top:22px}.home-projects .project-carousel-section{padding-top:0}}
+
+/* Portfolio flow and side arrows update */
+body,.hero,.home-projects,.home-projects .project-carousel-section,.experience,.about,footer{background:var(--paper);color:var(--ink)}
+[data-theme=light] .experience{background:var(--paper);color:var(--ink)}
+footer:after{color:rgba(197,139,147,.055)}
+footer .section-index{color:var(--maroon-soft)}
+footer .footer-copy,[data-theme=light] footer .footer-copy{color:var(--muted)}
+footer .footer-link,[data-theme=light] footer .footer-link{color:var(--ink)}
+footer h2 em{color:var(--maroon-soft)}
+footer .button-light{background:var(--surface);color:var(--ink);border-color:var(--line)}
+footer .button-light:hover{background:var(--surface-2)}
+footer .footer-bottom{border-top-color:var(--line)}
+.project-feature{position:relative}
+.project-feature-switcher{position:absolute;inset:0;z-index:5;display:block;pointer-events:none}
+.project-feature-switcher button{position:absolute;top:50%;transform:translateY(-50%);pointer-events:auto;background:var(--surface);border-color:var(--line);box-shadow:0 5px 20px rgba(0,0,0,.25)}
+.project-feature-switcher button:first-child{left:14px}
+.project-feature-switcher button:last-child{right:14px}
+@media(max-width:900px){
+  .project-feature-switcher{height:clamp(280px,48vw,400px)}
+}
+@media(max-width:640px){
+  .project-feature-switcher{height:clamp(270px,78vw,360px)}
+  .project-feature-switcher button:first-child{left:8px}
+  .project-feature-switcher button:last-child{right:8px}
+}
+/* Borderless project carousel */
+.home-projects .project-feature,
+.project-feature{
+  border:0;
+  background:transparent;
+  box-shadow:none;
+}
+.home-projects .project-feature-media,
+.project-feature-media{
+  border:0;
+  background:transparent;
+}
+.project-feature-copy{
+  border:0;
+  background:transparent;
+  box-shadow:none;
+}
+.project-feature .tag-row span,
+[data-theme=light] .project-feature .tag-row span{
+  border:0;
+  background:none;
+  padding:0;
+  color:var(--muted);
+}
+.project-feature .tag-row span+span:before{content:"Â·";margin-right:7px;color:var(--maroon-soft)}
+[data-theme=light] .project-feature-media{background:transparent}
+.project-switcher button,
+.project-feature-switcher button,
+.project-photo-controls>button,
+[data-theme=light] .project-photo-controls>button{
+  width:64px;
+  height:72px;
+  padding:0;
+  border:0;
+  background:none;
+  box-shadow:none;
+  color:var(--ink);
+  cursor:pointer;
+  transition:transform .2s ease,color .2s ease;
+}
+.project-switcher button svg,
+.project-photo-controls>button svg{
+  width:44px;
+  height:44px;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));
+}
+.project-switcher button:hover,
+.project-photo-controls>button:hover,
+[data-theme=light] .project-photo-controls>button:hover{
+  border:0;
+  background:none;
+  color:var(--maroon-soft);
+}
+.project-feature-switcher button:hover{transform:translateY(-50%) scale(1.12)}
+.project-photo-controls>button:hover{transform:scale(1.12)}
+.project-switcher button:focus-visible,
+.project-photo-controls>button:focus-visible{
+  outline:2px solid var(--maroon-soft);
+  outline-offset:2px;
+}
+.project-photo-controls{bottom:9px}
+.project-photo-controls>button{width:44px;height:52px}
+.project-photo-controls>button svg{width:32px;height:32px}
+@media(max-width:640px){
+  .project-feature-switcher button{width:44px;height:52px}
+  .project-feature-switcher button svg{width:32px;height:32px}
+}

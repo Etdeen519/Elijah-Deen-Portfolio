@@ -36,13 +36,14 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
   return <section className="project-carousel-section" id="project-carousel" aria-label="Browse all projects">
     <div className="project-carousel-heading">
       <div><span className="project-carousel-kicker">PROJECTS</span><p>{String(projectIndex + 1).padStart(2, "0")} <span>/ {String(projects.length).padStart(2, "0")}</span></p></div>
-      <div className="project-switcher" aria-label="Project controls">
-        <button type="button" onClick={() => changeProject(-1)} aria-label="Previous project"><ChevronLeft size={26}/></button>
-        <button type="button" onClick={() => changeProject(1)} aria-label="Next project"><ChevronRight size={26}/></button>
-      </div>
+
     </div>
 
     <article className="project-feature" key={project.title}>
+      <div className="project-switcher project-feature-switcher" aria-label="Project controls">
+        <button type="button" onClick={() => changeProject(-1)} aria-label="Previous project"><ChevronLeft size={26}/></button>
+        <button type="button" onClick={() => changeProject(1)} aria-label="Next project"><ChevronRight size={26}/></button>
+      </div>
       <div className="project-feature-media">
         {project.images.length ? <>
           {project.images[imageIndex].video
