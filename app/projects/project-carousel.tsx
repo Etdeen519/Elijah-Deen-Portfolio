@@ -34,16 +34,10 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
   }
 
   return <section className="project-carousel-section" id="project-carousel" aria-label="Browse all projects">
-    <div className="project-carousel-heading">
-      <div><span className="project-carousel-kicker">PROJECTS</span><p>{String(projectIndex + 1).padStart(2, "0")} <span>/ {String(projects.length).padStart(2, "0")}</span></p></div>
 
-    </div>
 
     <article className="project-feature" key={project.title}>
-      <div className="project-switcher project-feature-switcher" aria-label="Project controls">
-        <button type="button" onClick={() => changeProject(-1)} aria-label="Previous project"><ChevronLeft size={26}/></button>
-        <button type="button" onClick={() => changeProject(1)} aria-label="Next project"><ChevronRight size={26}/></button>
-      </div>
+
       <div className="project-feature-media">
         {project.images.length ? <>
           {project.images[imageIndex].video
@@ -65,8 +59,18 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
         <div className="tag-row">{project.skills.map(skill => <span key={skill}>{skill}</span>)}</div>
       </div>
     </article>
+    <div className="project-navigation">
+    <div className="project-carousel-heading">
+      <div><span className="project-carousel-kicker">PROJECTS</span><p>{String(projectIndex + 1).padStart(2, "0")} <span>/ {String(projects.length).padStart(2, "0")}</span></p></div>
+
+    </div>
+      <div className="project-switcher" aria-label="Project controls">
+        <button type="button" onClick={() => changeProject(-1)} aria-label="Previous project"><ChevronLeft size={26}/></button>
+        <button type="button" onClick={() => changeProject(1)} aria-label="Next project"><ChevronRight size={26}/></button>
+      </div>
     <div className="project-rail" aria-label="Choose a project">
       {projects.map((item, index) => <button type="button" key={item.title} className={index === projectIndex ? "active" : ""} onClick={() => {setProjectIndex(index);setImageIndex(0)}} aria-label={`Show ${item.title}`} aria-current={index === projectIndex ? "true" : undefined}><span className="project-tab-line"/><span className="project-tab-label" aria-hidden="true">{item.title}</span></button>)}
+    </div>
     </div>
     <p className="project-rail-hint">Use the large arrows to browse projects. Media controls appear when a project has multiple views.</p>
   </section>;
