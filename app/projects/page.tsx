@@ -5,7 +5,7 @@ import ProjectCarousel from "./project-carousel";
 
 
 
-export const projects = [
+export const projects = [ /* video-first-projects */
   {
     title: "Automated Nailer Clamp",
     organization: "Sonoco · 2026",
@@ -14,12 +14,19 @@ export const projects = [
     skills: ["Inventor", "Pneumatics", "FEA"],
     result: "IN PROGRESS",
     resultLabel: "±0.1 in alignment target",
-    images: [
-      {src:sitePath("/projects/gallery/clamp-close-iso.jpeg"),alt:"Fabricated automated nailer clamp from above"},
-      {src:sitePath("/projects/gallery/clamp-on-introducer.jpeg"),alt:"Automated nailer clamp installed on the introducer"},
-      {src:sitePath("/projects/gallery/clamp-portrait.mp4"),alt:"Short portrait video of the automated nailer clamp",video:true},
-      {src:sitePath("/projects/gallery/clamp-first-video.mp4"),alt:"Automated nailer clamp operation video",video:true},
-    ],
+    images: [{src:sitePath("/projects/gallery/clamp-first-video.mp4"),alt:"Automated nailer clamp operation video",video:true},{src:sitePath("/projects/gallery/clamp-close-iso.jpeg"),alt:"Fabricated automated nailer clamp from above"},{src:sitePath("/projects/gallery/clamp-on-introducer.jpeg"),alt:"Automated nailer clamp installed on the introducer"},{src:sitePath("/projects/gallery/clamp-portrait.mp4"),alt:"Short portrait video of the automated nailer clamp",video:true}],
+  },
+  {
+    title: "Integrated Motor Conveyor",
+    organization: "VEX Robotics · 2025",
+    category: "Product Development",
+    description: "Redesigned the V5 Workcell conveyor to package its motor and gearbox inside a housing suited to production assembly.",
+    skills: ["SolidWorks", "DFM", "DFA"],
+    result: "3 PARTS",
+    resultLabel: "injection-moldable housing",
+    image: sitePath("/projects/linear-conveyor.jpg"),
+    alt: "Completed VEX linear conveyor prototype",
+    images: [{src:sitePath("/assembly-timelapse.mp4"),alt:"Time lapse of Elijah assembling the conveyor",video:true},{src:sitePath("/projects/linear-conveyor.jpg"),alt:"Completed VEX linear conveyor prototype"},{src:sitePath("/projects/gallery/conveyor-original.jpg"),alt:"Original linear conveyor design"},{src:sitePath("/projects/gallery/conveyor-cad.png"),alt:"Collapsed CAD view of the linear conveyor"},{src:sitePath("/projects/gallery/conveyor-exploded.png"),alt:"Exploded CAD view of the linear conveyor"}],
   },
   {
     title: "Rear Axle Truck Scale",
@@ -55,7 +62,7 @@ export const projects = [
     resultLabel: "concept through final geometry",
     image: sitePath("/projects/bandsaw-collector.jpg"),
     alt: "Fabricated bandsaw dust collection prototype",
-    images: [{src:sitePath("/projects/bandsaw-collector.jpg"),alt:"Fabricated bandsaw dust collection prototype"},{src:sitePath("/projects/gallery/bandsaw-on-machine.jpg"),alt:"Dust collection prototype mounted on the bandsaw"},{src:sitePath("/projects/gallery/bandsaw-easy-prototype.png"),alt:"Easy to fabricate nozzle prototype design"},{src:sitePath("/projects/gallery/bandsaw-test.mp4"),alt:"Bandsaw dust collection test video",video:true}],
+    images: [{src:sitePath("/projects/gallery/bandsaw-test.mp4"),alt:"Bandsaw dust collection test video",video:true},{src:sitePath("/projects/bandsaw-collector.jpg"),alt:"Fabricated bandsaw dust collection prototype"},{src:sitePath("/projects/gallery/bandsaw-on-machine.jpg"),alt:"Dust collection prototype mounted on the bandsaw"},{src:sitePath("/projects/gallery/bandsaw-easy-prototype.png"),alt:"Easy to fabricate nozzle prototype design"}],
   },
   {
     title: "Repair Turntable",
@@ -69,18 +76,7 @@ export const projects = [
     alt: "Fabricated repair turntable",
     images: [{src:sitePath("/projects/repair-turntable.jpg"),alt:"Fabricated repair turntable"},{src:sitePath("/projects/gallery/turntable-installed.jpg"),alt:"Repair turntable installed on the production line"},{src:sitePath("/projects/gallery/turntable-drawing.png"),alt:"Assembly drawing of the repair turntable"}],
   },
-  {
-    title: "Integrated Motor Conveyor",
-    organization: "VEX Robotics · 2025",
-    category: "Product Development",
-    description: "Redesigned the V5 Workcell conveyor to package its motor and gearbox inside a housing suited to production assembly.",
-    skills: ["SolidWorks", "DFM", "DFA"],
-    result: "3 PARTS",
-    resultLabel: "injection-moldable housing",
-    image: sitePath("/projects/linear-conveyor.jpg"),
-    alt: "Completed VEX linear conveyor prototype",
-    images: [{src:sitePath("/projects/linear-conveyor.jpg"),alt:"Completed VEX linear conveyor prototype"},{src:sitePath("/projects/gallery/conveyor-original.jpg"),alt:"Original linear conveyor design"},{src:sitePath("/projects/gallery/conveyor-cad.png"),alt:"Collapsed CAD view of the linear conveyor"},{src:sitePath("/projects/gallery/conveyor-exploded.png"),alt:"Exploded CAD view of the linear conveyor"},{src:sitePath("/assembly-timelapse.mp4"),alt:"Time lapse of Elijah assembling the conveyor",video:true}],
-  },
+
   {
     title: "Inclined Conveyor",
     organization: "VEX Robotics · 2025",
@@ -115,7 +111,7 @@ export const projects = [
     resultLabel: "extended and collapsed states",
     image: sitePath("/projects/scissor-lift.png"),
     alt: "CAD model of the scissor lift",
-    images: [{src:sitePath("/projects/scissor-lift.png"),alt:"CAD model of the scissor lift"},{src:sitePath("/projects/gallery/scissor-pan.mp4"),alt:"Scissor lift CAD pan video",video:true}],
+    images: [{src:sitePath("/projects/gallery/scissor-pan.mp4"),alt:"Scissor lift CAD pan video",video:true},{src:sitePath("/projects/scissor-lift.png"),alt:"CAD model of the scissor lift"}],
   },
   {
     title: "Snapper Combat Robot",

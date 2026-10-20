@@ -51,12 +51,12 @@ export default function Home() {
     </section>
 
     <section className="section experience" id="experience">
-      <div className="section-heading compact"><p className="section-index">02 / EXPERIENCE</p><h2>Learning by<br/>building.</h2></div>
+      <div className="section-heading compact"><h2>Experience.</h2></div>
       <div className="timeline">{experience.map(([year,company,role,note])=><div className="timeline-row" key={company+role}><span className="timeline-year">{year}</span><div><h3>{company}</h3><p>{note}</p></div><strong>{role}</strong></div>)}</div>
     </section>
 
     <section className="section about" id="about">
-      <div className="about-copy"><p className="section-index">03 / HOW I WORK</p><h2>Curious enough to ask why.<br/>Hands-on enough to find out.</h2><p>I’m drawn to engineering problems where the answer has to survive outside the computer. My best work happens at the intersection of careful analysis and quick iteration: measuring the real system, creating a concept, building it, and learning from what happens next.</p></div>
+      <div className="about-copy"><h2>How I work.</h2><p>I’m drawn to engineering problems where the answer has to survive outside the computer. My best work happens at the intersection of careful analysis and quick iteration: measuring the real system, creating a concept, building it, and learning from what happens next.</p></div>
       <div className="skill-grid">{skills.map(({icon:Icon,label,detail})=><div className="skill" key={label}><Icon size={22} strokeWidth={1.5}/><span>{label}</span><p>{detail}</p></div>)}</div>
     </section>
 
