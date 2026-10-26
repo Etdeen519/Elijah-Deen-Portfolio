@@ -1,7 +1,7 @@
 import { sitePath } from "../site-path";
 import { ArrowLeft, Download } from "lucide-react";
 import ThemeToggle from "../theme-toggle";
-import ProjectCarousel from "./project-carousel";
+import ProjectGrid from "./project-grid";
 
 
 
@@ -149,10 +149,10 @@ export default function ProjectsPage() {
       <a className="back-link" href={sitePath("/")}><ArrowLeft size={16}/> Back home</a>
       <p className="eyebrow"><span/> Engineering work</p>
       <h1>Projects.</h1>
-      <p>Machine design, manufacturing, robotics, and coursework. Browse one project at a time, then flip through its images.</p>
+      <p>Machine design, manufacturing, robotics, and coursework. Pick a project to see the work behind it.</p>
     </section>
 
-    <ProjectCarousel projects={projects}/>
+    <ProjectGrid projects={projects}/>
 
     <div className="archive-end"><a href={sitePath("/")}><ArrowLeft size={16}/> Return home</a><span>ELIJAH T. DEEN · 2026</span></div>
   </main>;
