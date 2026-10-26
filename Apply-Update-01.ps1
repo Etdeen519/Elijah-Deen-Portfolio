@@ -9,7 +9,15 @@ if (-not (Test-Path $target) -or -not (Test-Path (Join-Path $root 'package.json'
 }
 if (-not (Test-Path $replacement)) { throw 'Update-01-projects-page.tsx is missing.' }
 
-$currentHash = (Get-FileHash -LiteralPath $target -Algorithm SHA256).Hash
+$currentText = [System.IO.File]::ReadAllText($target)
+$normalizedText = $currentText.Replace("`r`n", "`n").Replace("`r", "`n")
+$sha = [System.Security.Cryptography.SHA256]::Create()
+try {
+  $bytes = [System.Text.Encoding]::UTF8.GetBytes($normalizedText)
+  $currentHash = [System.BitConverter]::ToString($sha.ComputeHash($bytes)).Replace('-', '')
+} finally {
+  $sha.Dispose()
+}
 $replacementHash = (Get-FileHash -LiteralPath $replacement -Algorithm SHA256).Hash
 if ($currentHash -eq $replacementHash) {
   Write-Host 'Update 01 is already applied.' -ForegroundColor Green
