@@ -140,7 +140,7 @@ export const projects = [ /* video-first-projects */
 export default function ProjectsPage() {
   return <main>
     <header className="site-header">
-      <a className="wordmark" href={sitePath("/")} aria-label="Elijah Deen, home">ED<span>/</span>ME</a>
+      <a className="wordmark" href={sitePath("/")} aria-label="Elijah Deen, home">Elijah <span>Deen</span></a>
       <nav aria-label="Project navigation"><a href={sitePath("/")}>Home</a><a href={sitePath("/#work")}>Projects grid</a><a href={sitePath("/#experience")}>Experience</a></nav>
       <div className="header-actions"><ThemeToggle/><a className="header-cta" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">Resume <Download size={16}/></a></div>
     </header>

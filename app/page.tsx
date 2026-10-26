@@ -1,8 +1,9 @@
 import { sitePath } from "./site-path";
-import { ArrowDownRight, ArrowUpRight, Box, Download, Hammer, MapPin, Ruler, Wrench } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import PhotoCarousel from "./photo-carousel";
 import ThemeToggle from "./theme-toggle";
 import ProjectGrid from "./projects/project-grid";
+import SectionRail from "./section-rail";
 import { projects } from "./projects/page";
 
 const experience = [
@@ -13,41 +14,30 @@ const experience = [
 ];
 
 const skills = [
-  { icon:Box, label:"CAD", detail:"SolidWorks · Inventor · AutoCAD" },
-  { icon:Ruler, label:"Design", detail:"Machine design · DFM/DFA · GD&T" },
-  { icon:Hammer, label:"Build", detail:"MIG · Stick · Machining · 3D printing" },
-  { icon:Wrench, label:"Systems", detail:"Pneumatics · Automation · Testing" },
+  { label:"CAD", detail:"SolidWorks · Inventor · AutoCAD" },
+  { label:"Design", detail:"Machine design · DFM/DFA · GD&T" },
+  { label:"Build", detail:"MIG · Stick · Machining · 3D printing" },
+  { label:"Systems", detail:"Pneumatics · Automation · Testing" },
 ];
 
 export default function Home() {
   return <main>
+    <SectionRail/>
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label="Elijah Deen, home">ED<span>/</span>ME</a>
+      <a className="wordmark" href="#top" aria-label="Elijah Deen, home">Elijah <span>Deen</span></a>
       <nav aria-label="Primary navigation"><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#about">About</a></nav>
       <div className="header-actions"><ThemeToggle/><a className="header-cta" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">Resume <Download size={16}/></a></div>
     </header>
 
     <section className="hero" id="top">
-      <div className="hero-grid" aria-hidden="true"/>
       <div className="hero-copy">
-        <p className="eyebrow"><span/> Mechanical engineering student at Texas A&amp;M</p>
         <h1>Elijah <em>Deen</em></h1>
-        <p className="hero-intro">{/* Add Elijah’s introduction paragraph here. */}</p>
-        <div className="hero-actions">
-          <a className="button button-primary" href="#work">View projects <ArrowDownRight size={18}/></a>
-          <a className="text-link" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">View resume <ArrowUpRight size={16}/></a>
-        </div>
       </div>
       <PhotoCarousel/>
-      <div className="hero-meta">
-        <div><span>LOCATION</span><strong><MapPin size={14}/> Texas / Alabama</strong></div>
-        <div><span>FOCUS</span><strong>Product + Machine Design</strong></div>
-        <div><span>EDUCATION</span><strong>Texas A&amp;M University</strong></div>
-      </div>
     </section>
 
-    <section className="home-projects" id="work">
-      <div className="home-grid-heading"><h2>Projects.</h2><a href={sitePath("/projects")}>View carousel <ArrowUpRight size={20}/></a></div>
+    <section className="home-projects">
+      <div className="home-grid-heading" id="work"><h2>Projects.</h2><a href={sitePath("/projects")}>View carousel <ArrowUpRight size={20}/></a></div>
       <ProjectGrid projects={projects}/>
     </section>
 
@@ -57,8 +47,8 @@ export default function Home() {
     </section>
 
     <section className="section about" id="about">
-      <div className="about-copy"><h2>How I work.</h2><p>I’m drawn to engineering problems where the answer has to survive outside the computer. My best work happens at the intersection of careful analysis and quick iteration: measuring the real system, creating a concept, building it, and learning from what happens next.</p></div>
-      <div className="skill-grid">{skills.map(({icon:Icon,label,detail})=><div className="skill" key={label}><Icon size={22} strokeWidth={1.5}/><span>{label}</span><p>{detail}</p></div>)}</div>
+      <div className="about-heading"><h2>How I work.</h2><p>I’m drawn to engineering problems where the answer has to survive outside the computer. My best work happens at the intersection of careful analysis and quick iteration: measuring the real system, creating a concept, building it, and learning from what happens next.</p></div>
+      <div className="skill-grid">{skills.map(({label,detail},index)=><div className="skill" key={label}><span className="skill-number">0{index+1}</span><h3>{label}</h3><p>{detail}</p></div>)}</div>
     </section>
 
     <footer id="contact">
