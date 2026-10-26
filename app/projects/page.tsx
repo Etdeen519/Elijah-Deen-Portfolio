@@ -1,7 +1,7 @@
 import { sitePath } from "../site-path";
 import { ArrowLeft, Download } from "lucide-react";
 import ThemeToggle from "../theme-toggle";
-import ProjectGrid from "./project-grid";
+import ProjectCarousel from "./project-carousel";
 
 
 
@@ -141,18 +141,18 @@ export default function ProjectsPage() {
   return <main>
     <header className="site-header">
       <a className="wordmark" href={sitePath("/")} aria-label="Elijah Deen, home">ED<span>/</span>ME</a>
-      <nav aria-label="Project navigation"><a href={sitePath("/")}>Home</a><a href={sitePath("/#experience")}>Experience</a><a href={sitePath("/#about")}>About</a></nav>
+      <nav aria-label="Project navigation"><a href={sitePath("/")}>Home</a><a href={sitePath("/#work")}>Projects grid</a><a href={sitePath("/#experience")}>Experience</a></nav>
       <div className="header-actions"><ThemeToggle/><a className="header-cta" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">Resume <Download size={16}/></a></div>
     </header>
 
     <section className="projects-hero">
       <a className="back-link" href={sitePath("/")}><ArrowLeft size={16}/> Back home</a>
       <p className="eyebrow"><span/> Engineering work</p>
-      <h1>Projects.</h1>
-      <p>Machine design, manufacturing, robotics, and coursework. Pick a project to see the work behind it.</p>
+      <h1>Project carousel.</h1>
+      <p>Browse the projects one at a time. The <a href={sitePath("/#work")}>grid on the homepage</a> shows them all at once.</p>
     </section>
 
-    <ProjectGrid projects={projects}/>
+    <ProjectCarousel projects={projects}/>
 
     <div className="archive-end"><a href={sitePath("/")}><ArrowLeft size={16}/> Return home</a><span>ELIJAH T. DEEN · 2026</span></div>
   </main>;

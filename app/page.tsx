@@ -2,7 +2,7 @@ import { sitePath } from "./site-path";
 import { ArrowDownRight, ArrowUpRight, Box, Download, Hammer, MapPin, Ruler, Wrench } from "lucide-react";
 import PhotoCarousel from "./photo-carousel";
 import ThemeToggle from "./theme-toggle";
-import ProjectCarousel from "./projects/project-carousel";
+import ProjectGrid from "./projects/project-grid";
 import { projects } from "./projects/page";
 
 const experience = [
@@ -23,7 +23,7 @@ export default function Home() {
   return <main>
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="Elijah Deen, home">ED<span>/</span>ME</a>
-      <nav aria-label="Primary navigation"><a href={sitePath("/projects")}>Projects</a><a href="#experience">Experience</a><a href="#about">About</a></nav>
+      <nav aria-label="Primary navigation"><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#about">About</a></nav>
       <div className="header-actions"><ThemeToggle/><a className="header-cta" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">Resume <Download size={16}/></a></div>
     </header>
 
@@ -47,8 +47,8 @@ export default function Home() {
     </section>
 
     <section className="home-projects" id="work">
-      <ProjectCarousel projects={projects}/>
-      <a className="browse-projects-link" href={sitePath("/projects")}>See all projects in a grid <ArrowUpRight size={20}/></a>
+      <div className="home-grid-heading"><h2>Projects.</h2><a href={sitePath("/projects")}>View carousel <ArrowUpRight size={20}/></a></div>
+      <ProjectGrid projects={projects}/>
     </section>
 
     <section className="section experience" id="experience">

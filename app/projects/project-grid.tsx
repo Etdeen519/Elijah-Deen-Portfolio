@@ -7,7 +7,6 @@ type Media = { src: string; alt: string; video?: boolean };
 type Project = {
   title: string;
   organization: string;
-  category: string;
   description: string;
   skills: string[];
   images: Media[];
@@ -90,8 +89,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
             {thumbnail ? <img src={thumbnail.src} alt={thumbnail.alt} loading="lazy"/> : <span className="project-grid-placeholder">ED / ME</span>}
           </span>
           <span className="project-grid-card-copy">
-            <span className="project-grid-category">{item.category} <ArrowUpRight size={17} aria-hidden="true"/></span>
-            <strong>{item.title}</strong>
+            <strong>{item.title} <ArrowUpRight size={19} aria-hidden="true"/></strong>
             <span className="project-grid-summary">{summaries[item.title] ?? item.description}</span>
           </span>
         </button>;
@@ -116,7 +114,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
           </> : <div className="project-dialog-placeholder">{project.title}</div>}
         </div>
         <div className="project-dialog-copy">
-          <p className="project-dialog-meta">{project.category} <span>·</span> {project.organization}</p>
+          <p className="project-dialog-meta">{project.organization}</p>
           <h2 id="project-dialog-title">{project.title}</h2>
           <p className="project-dialog-description">{project.description}</p>
           <div className="project-dialog-skills">{project.skills.map(skill => <span key={skill}>{skill}</span>)}</div>

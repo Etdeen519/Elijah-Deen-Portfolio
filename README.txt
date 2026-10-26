@@ -1,8 +1,8 @@
-Update 02 - Projects grid and detail window
+Update 03 - Four-column homepage grid and fixed-size project popup
 
 1. Extract the ZIP.
-2. Copy Apply-Update-02.bat, Apply-Update-02.ps1, and the entire Update-02-files folder into your main Elijah-Deen-Portfolio folder, beside package.json.
-3. Double-click Apply-Update-02.bat and wait for the green success message.
-4. In GitHub Desktop, confirm app/globals.css, app/page.tsx, app/projects/page.tsx, app/projects/project-grid.tsx, and src/main.tsx changed. Commit and Push origin.
+2. Copy Apply-Update-03.bat, Apply-Update-03.ps1, and the entire Update-03-files folder into your main Elijah-Deen-Portfolio folder beside package.json.
+3. Double-click Apply-Update-03.bat. Wait for the green "Update 03 applied" message.
+4. In GitHub Desktop, review the changed source files. Commit and Push origin.
 
-The home carousel stays in place with more room above it. The navigation's Projects link and the new link below the home carousel lead to the grid. The grid has three columns on desktop and opens project details with an uncropped image/video gallery. The script checks all existing files before replacing anything. It does not change your media assets or project descriptions.
+The homepage Projects section now uses the grid, four across on wider screens. The carousel is available at /projects through the View carousel link. Project category labels are removed. The popup keeps the same size when switching between photos and videos, which remain uncropped. Smaller screens use fewer grid columns.

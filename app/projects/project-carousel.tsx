@@ -6,7 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 type Project = {
   title: string;
   organization: string;
-  category: string;
   description: string;
   skills: string[];
   images: { src: string; alt: string; video?: boolean }[];
@@ -53,7 +52,7 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
         </> : <div className="project-no-image"><span>PROJECT {String(projectIndex + 1).padStart(2, "0")}</span><strong>{project.title}</strong></div>}
       </div>
       <div className="project-feature-copy">
-        <div className="archive-meta"><span>{project.category}</span><span>{project.organization}</span></div>
+        <div className="archive-meta"><span>{project.organization}</span></div>
         <h2>{project.title}</h2>
         <p>{project.description}</p>
         <div className="tag-row">{project.skills.map(skill => <span key={skill}>{skill}</span>)}</div>
