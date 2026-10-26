@@ -1,5 +1,5 @@
 import { sitePath } from "./site-path";
-import { ArrowUpRight, Download } from "lucide-react";
+import { ArrowUpRight, Box, Download, Hammer, Ruler, Wrench } from "lucide-react";
 import PhotoCarousel from "./photo-carousel";
 import ThemeToggle from "./theme-toggle";
 import ProjectGrid from "./projects/project-grid";
@@ -14,10 +14,10 @@ const experience = [
 ];
 
 const skills = [
-  { label:"CAD", detail:"SolidWorks · Inventor · AutoCAD" },
-  { label:"Design", detail:"Machine design · DFM/DFA · GD&T" },
-  { label:"Build", detail:"MIG · Stick · Machining · 3D printing" },
-  { label:"Systems", detail:"Pneumatics · Automation · Testing" },
+  { icon:Box, label:"CAD", detail:"SolidWorks · Inventor · AutoCAD" },
+  { icon:Ruler, label:"Design", detail:"Machine design · DFM/DFA · GD&T" },
+  { icon:Hammer, label:"Build", detail:"MIG · Stick · Machining · 3D printing" },
+  { icon:Wrench, label:"Systems", detail:"Pneumatics · Automation · Testing" },
 ];
 
 export default function Home() {
@@ -47,14 +47,15 @@ export default function Home() {
     </section>
 
     <section className="section about" id="about">
-      <div className="about-heading"><h2>How I work.</h2><p>I’m drawn to engineering problems where the answer has to survive outside the computer. My best work happens at the intersection of careful analysis and quick iteration: measuring the real system, creating a concept, building it, and learning from what happens next.</p></div>
-      <div className="skill-grid">{skills.map(({label,detail},index)=><div className="skill" key={label}><span className="skill-number">0{index+1}</span><h3>{label}</h3><p>{detail}</p></div>)}</div>
+      <div className="about-copy"><h2>How I work.</h2><p>I’m drawn to engineering problems where the answer has to survive outside the computer. My best work happens at the intersection of careful analysis and quick iteration: measuring the real system, creating a concept, building it, and learning from what happens next.</p></div>
+      <div className="skill-grid">{skills.map(({icon:Icon,label,detail})=><div className="skill" key={label}><Icon size={22} strokeWidth={1.5}/><span>{label}</span><p>{detail}</p></div>)}</div>
     </section>
 
-    <footer id="contact">
-      <p className="section-index">04 / NEXT PROJECT</p><h2>Let’s build something<br/><em>worth testing.</em></h2>
-      <p className="footer-copy">Currently exploring full-time mechanical engineering opportunities in product development, robotics, and manufacturing.</p>
-      <div className="footer-actions"><a className="button button-light" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">Download resume <Download size={18}/></a><a className="footer-link" href="#top">Back to top <ArrowUpRight size={16}/></a></div>
+    <footer className="site-footer" id="contact">
+      <div className="footer-content">
+        <div className="footer-heading"><h2>Next project.</h2><p>Currently exploring full-time mechanical engineering opportunities in product development, robotics, and manufacturing.</p></div>
+        <div className="footer-actions"><a className="button button-primary" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">View resume <Download size={18}/></a><a className="footer-link" href="#top">Back to top <ArrowUpRight size={16}/></a></div>
+      </div>
       <div className="footer-bottom"><span>ELIJAH T. DEEN</span><span>MECHANICAL ENGINEER</span><span>© 2026</span></div>
     </footer>
   </main>;
