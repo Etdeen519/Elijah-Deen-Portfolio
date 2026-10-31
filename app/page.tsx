@@ -1,5 +1,5 @@
 import { sitePath } from "./site-path";
-import { ArrowUpRight, Box, Download, Hammer, Ruler, Wrench } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import PhotoCarousel from "./photo-carousel";
 import ThemeToggle from "./theme-toggle";
 import ProjectGrid from "./projects/project-grid";
@@ -13,11 +13,11 @@ const experience = [
   ["2024","Oldcastle BuildingEnvelope","Engineering Intern","CAD systems and engineering documentation"],
 ];
 
-const skills = [
-  { icon:Box, label:"CAD", detail:"SolidWorks · Inventor · AutoCAD" },
-  { icon:Ruler, label:"Design", detail:"Machine design · DFM/DFA · GD&T" },
-  { icon:Hammer, label:"Build", detail:"MIG · Stick · Machining · 3D printing" },
-  { icon:Wrench, label:"Systems", detail:"Pneumatics · Automation · Testing" },
+const workSteps = [
+  ["See the problem", "Watch what happens and ask the people using it what gets in their way."],
+  ["Work out a design", "Measure what matters, sketch ideas, and model the parts in CAD."],
+  ["Build a version", "Make a prototype or fabricate the parts and put them together."],
+  ["Test and improve", "Try it in the real setup and change what does not work."],
 ];
 
 export default function Home() {
@@ -47,8 +47,8 @@ export default function Home() {
     </section>
 
     <section className="section about" id="about">
-      <div className="about-copy"><h2>How I work.</h2><p>I’m drawn to engineering problems where the answer has to survive outside the computer. My best work happens at the intersection of careful analysis and quick iteration: measuring the real system, creating a concept, building it, and learning from what happens next.</p></div>
-      <div className="skill-grid">{skills.map(({icon:Icon,label,detail})=><div className="skill" key={label}><Icon size={22} strokeWidth={1.5}/><span>{label}</span><p>{detail}</p></div>)}</div>
+      <div className="work-heading"><h2>How I work.</h2><p>I like making new things and solving problems by building something better. I start by seeing the problem firsthand, then design, build, and test a solution.</p></div>
+      <ol className="work-steps">{workSteps.map(([title,detail],index)=><li key={title}><span>0{index+1}</span><h3>{title}</h3><p>{detail}</p></li>)}</ol>
     </section>
 
     <footer className="site-footer" id="contact">

@@ -40,7 +40,6 @@ export default function SectionRail() {
 
   return <aside className="scroll-position" aria-label={`Page position: ${sections[position.active].label}, ${Math.round(position.progress * 100)} percent`}>
     <div className="scroll-position-copy">
-      <span className="scroll-position-kicker">ON THIS PAGE</span>
       <strong>{sections[position.active].label}</strong>
       <span className="scroll-position-percent">{String(Math.round(position.progress * 100)).padStart(2, "0")}%</span>
     </div>
