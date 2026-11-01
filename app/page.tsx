@@ -23,7 +23,7 @@ const workSteps = [
 const featuredTitles = ["Flange Alignment Gripper Tool", "Integrated Motor Conveyor", "Repair Turntable"];
 
 export default function Home() {
-  return <main>
+  return <main className="portfolio-home">
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="Elijah Deen, home">Elijah <span>Deen</span></a>
       <nav aria-label="Primary navigation"><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#about">About</a></nav>
