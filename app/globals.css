@@ -688,9 +688,9 @@ footer .footer-bottom{border-top-color:var(--line)}
 .experience .timeline-row h3{font-size:1.25rem;margin-bottom:5px}
 .experience .timeline-row p{font-size:.95rem;line-height:1.45}
 .experience .timeline-row>strong{font-size:1rem}
-.site-footer{min-height:calc(100svh + 100px);display:flex;flex-direction:column;justify-content:flex-start;gap:clamp(55px,9vh,90px);padding-top:clamp(80px,12vh,140px);padding-bottom:clamp(150px,22vh,240px)}
+.site-footer{min-height:0;display:block;padding-top:clamp(90px,12vh,140px);padding-bottom:28px}
 .site-footer .footer-content,.site-footer .footer-bottom{width:100%}
-.site-footer .footer-bottom{margin-top:0}
+.site-footer .footer-bottom{margin-top:56px}
 
 /* Update 07: leave the home layout open after removing the scroll rail. */
 @media(min-width:1101px){
