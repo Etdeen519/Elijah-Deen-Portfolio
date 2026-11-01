@@ -29,8 +29,8 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
-      - run: pnpm install --no-frozen-lockfile --config.strictDepBuilds=false
-      - run: pnpm approve-builds esbuild sharp unrs-resolver workerd && pnpm run build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
