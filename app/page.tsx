@@ -20,6 +20,8 @@ const workSteps = [
   ["Test and improve", "Try it in the real setup and change what does not work."],
 ];
 
+const featuredTitles = ["Flange Alignment Gripper Tool", "Integrated Motor Conveyor", "Repair Turntable"];
+
 export default function Home() {
   return <main>
     <header className="site-header">
@@ -38,21 +40,12 @@ export default function Home() {
     </section>
 
     <section className="home-projects">
-      <div className="home-grid-heading" id="work"><h2>Selected work.</h2><a href="#all-projects">See all projects <ArrowUpRight size={20}/></a></div>
-      <div className="featured-projects">{[projects[0], projects[1], projects[5]].map(project => {
-        const thumbnail = project.images.find(image => !image.video);
-        const path = "caseStudyPath" in project ? project.caseStudyPath : `/?project=${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
-        return <a className="featured-project" href={sitePath(path!)} key={project.title}>
-          {thumbnail && <img src={thumbnail.src} alt={thumbnail.alt} loading="lazy"/>}
-          <div><span className="featured-project-meta">{project.category}</span><h3>{project.title} <ArrowUpRight size={20} aria-hidden="true"/></h3><p><strong>{project.result}</strong> {project.resultLabel}</p></div>
-        </a>;
-      })}</div>
-      <div className="home-grid-heading all-projects-heading" id="all-projects"><h2>All projects.</h2></div>
-      <ProjectGrid projects={projects}/>
+      <div className="home-grid-heading" id="work"><h2>Selected work.</h2></div>
+      <ProjectGrid projects={projects} featuredTitles={featuredTitles}/>
     </section>
 
-    <section className="section experience" id="experience">
-      <div className="section-heading compact"><h2>Experience.</h2></div>
+    <section className="section experience" aria-labelledby="experience-heading">
+      <div className="section-heading compact" id="experience"><h2 id="experience-heading">Experience.</h2></div>
       <div className="timeline">{experience.map(([year,company,role,note])=><div className="timeline-row" key={company+role}><span className="timeline-year">{year}</span><div><h3>{company}</h3><p>{note}</p></div><strong>{role}</strong></div>)}</div>
     </section>
 

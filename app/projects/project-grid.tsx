@@ -7,6 +7,9 @@ import { sitePath } from "../site-path";
 type Media = { src: string; alt: string; video?: boolean };
 type Project = {
   caseStudyPath?: string;
+  category?: string;
+  result?: string;
+  resultLabel?: string;
   title: string;
   organization: string;
   description: string;
@@ -32,7 +35,7 @@ function slug(title: string) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-export default function ProjectGrid({ projects }: { projects: Project[] }) {
+export default function ProjectGrid({ projects, featuredTitles = [] }: { projects: Project[]; featuredTitles?: string[] }) {
   const [selected, setSelected] = useState<number | null>(null);
   const [mediaIndex, setMediaIndex] = useState(0);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -83,8 +86,20 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
   }
 
   return <section className="project-grid-section" aria-label="All projects">
+    {featuredTitles.length > 0 && <>
+      <div className="featured-projects">{projects.map((item, index) => {
+        if (!featuredTitles.includes(item.title)) return null;
+        const thumbnail = item.images.find(image => !image.video);
+        return <button type="button" className="featured-project" key={item.title} onClick={event => openProject(index, event.currentTarget)} aria-label={`View ${item.title}`}>
+          {thumbnail && <img src={thumbnail.src} alt={thumbnail.alt} loading="lazy"/>}
+          <div><span className="featured-project-meta">{item.category}</span><h3>{item.title} <ArrowUpRight size={20} aria-hidden="true"/></h3><p><strong>{item.result}</strong> {item.resultLabel}</p></div>
+        </button>;
+      })}</div>
+      <div className="home-grid-heading all-projects-heading" id="all-projects"><h2>More projects.</h2></div>
+    </>}
     <div className="project-grid">
       {projects.map((item, index) => {
+        if (featuredTitles.includes(item.title)) return null;
         const thumbnail = item.images.find(image => !image.video);
         return <button className="project-grid-card" type="button" key={item.title} onClick={event => openProject(index, event.currentTarget)} aria-label={`View ${item.title}`}>
           <span className="project-grid-media">
