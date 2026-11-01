@@ -3,7 +3,7 @@ import { ArrowUpRight, Download } from "lucide-react";
 import PhotoCarousel from "./photo-carousel";
 import ThemeToggle from "./theme-toggle";
 import ProjectGrid from "./projects/project-grid";
-import { projects } from "./projects/page";
+import { projects } from "./projects/project-data";
 import ContactLinks from "./contact-links";
 
 const experience = [
@@ -47,7 +47,7 @@ export default function Home() {
           <div><span className="featured-project-meta">{project.category}</span><h3>{project.title} <ArrowUpRight size={20} aria-hidden="true"/></h3><p><strong>{project.result}</strong> {project.resultLabel}</p></div>
         </a>;
       })}</div>
-      <div className="home-grid-heading all-projects-heading" id="all-projects"><h2>All projects.</h2><a href={sitePath("/projects")}>View carousel <ArrowUpRight size={20}/></a></div>
+      <div className="home-grid-heading all-projects-heading" id="all-projects"><h2>All projects.</h2></div>
       <ProjectGrid projects={projects}/>
     </section>
 
