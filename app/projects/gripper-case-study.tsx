@@ -1,6 +1,8 @@
 import { ArrowLeft, ArrowUpRight, Download } from "lucide-react";
 import ThemeToggle from "../theme-toggle";
 import { sitePath } from "../site-path";
+import ContactLinks from "../contact-links";
+import GripperProduction from "./gripper-production";
 
 export default function GripperCaseStudy() {
   return <main className="case-study">
@@ -20,13 +22,13 @@ export default function GripperCaseStudy() {
           <div><dt>Tools & methods</dt><dd>Inventor · Pneumatics · FEA</dd></div>
           <div><dt>Deployment</dt><dd>Two production lines</dd></div>
         </dl>
-        <div className="case-study-ownership"><h2>My contribution</h2><p>I designed, fabricated, and installed the mechanical system, including CAD, cylinder sizing, and welding. I collaborated with a controls engineer on integration.</p></div>
+        <div className="case-study-ownership"><h2>My contribution</h2><p>I designed, fabricated, and installed the mechanical system, including CAD, cylinder sizing, and welding. I collaborated with a controls engineer on PLC and software integration.</p></div>
         <figure className="case-study-hero-image"><img src={sitePath("/projects/gallery/clamp-close-iso.jpeg")} alt="Fabricated flange alignment gripper viewed from above"/><figcaption>The welded metal gripper assembly, designed to mount to the existing introducer.</figcaption></figure>
       </section>
       <nav className="case-study-contents" aria-label="On this page"><a href="#problem">01 / Problem</a><a href="#integration">02 / Design</a><a href="#operation">03 / In production</a></nav>
       <section className="case-study-section" id="problem">
-        <div className="case-study-section-label"><span>01 / The problem</span><h2>Sideways movement. Off-center nails.</h2></div>
-        <div className="case-study-body"><p>The existing flat pusher allowed wooden flanges to shift sideways as they entered the nailer, causing off-center nails. The new clamp needed to hold them aligned and retract below the table without replacing the existing introducer.</p></div>
+        <div className="case-study-section-label"><span>01 / The problem</span><h2>Keep the flanges centered.</h2></div>
+        <div className="case-study-body"><p>The existing flat pusher allowed wooden flanges to shift sideways as they entered the nailer, causing off-center nails. The clamp needed to mount to the existing introducer, grip the flange above the table, and retract beneath it when not in use.</p><div className="problem-video-space" role="img" aria-label="Video of the original introducer will be added here"><span>Before the gripper</span><p>Original introducer video coming soon.</p></div></div>
       </section>
       <section className="case-study-section" id="integration">
         <div className="case-study-section-label"><span>02 / Design</span><h2>One fixture. Three positions.</h2></div>
@@ -36,9 +38,10 @@ export default function GripperCaseStudy() {
       </section>
       <section className="case-study-section" id="operation">
         <div className="case-study-section-label"><span>03 / In production</span><h2>Built, tested, and installed.</h2></div>
-        <div className="case-study-body"><p>The gripper performed the required motion during installation testing and now operates on two production lines.</p><div className="case-study-results"><div><strong>2</strong><span>Production lines</span></div><div><strong>3</strong><span>Shifts per day</span></div><div><strong>5</strong><span>Days per week</span></div></div><figure><video controls playsInline preload="none" poster={sitePath("/projects/gallery/clamp-on-introducer.jpeg")} aria-label="Flange alignment gripper operating on the nailer"><source src={sitePath("/projects/gallery/clamp-first-video.mp4")} type="video/mp4"/>Your browser does not support video playback.</video><figcaption>The gripper in operation.</figcaption></figure></div>
+        <div className="case-study-body"><p>The gripper performed the required motion during installation testing and now operates on two production lines. A Texas installation is planned.</p><GripperProduction/><figure><video controls playsInline preload="none" poster={sitePath("/projects/gallery/clamp-on-introducer.jpeg")} aria-label="Flange alignment gripper operating on the nailer"><source src={sitePath("/projects/gallery/clamp-first-video.mp4")} type="video/mp4"/>Your browser does not support video playback.</video><figcaption>The gripper in operation.</figcaption></figure></div>
       </section>
       <footer className="case-study-footer"><a className="case-study-link" href={sitePath("/#work")}><ArrowLeft size={18}/> Explore more projects</a><a className="text-link" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">View resume <ArrowUpRight size={16}/></a></footer>
+      <ContactLinks/>
     </div>
   </main>;
 }

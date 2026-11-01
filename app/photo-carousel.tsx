@@ -32,7 +32,7 @@ export default function PhotoCarousel() {
     <button type="button" className="photo-arrow" onClick={() => change(-1)} aria-label="Previous photo"><ChevronLeft size={36}/></button>
     <div className="photo-slide" aria-live="polite">
       {slides.map((slide, slideIndex) => slide.type === "video"
-        ? <video key={slide.src} ref={videoRef} className={slideIndex === index ? "active" : ""} src={slide.src} aria-label={slide.alt} aria-hidden={slideIndex !== index} muted playsInline loop preload="metadata" onLoadedData={event => { if (slideIndex === index) void event.currentTarget.play().catch(() => {}); }}/>
+        ? <video key={slide.src} ref={videoRef} className={slideIndex === index ? "active" : ""} src={slide.src} poster={sitePath("/hero-vex.png")} aria-label={slide.alt} aria-hidden={slideIndex !== index} muted playsInline loop preload="metadata" onLoadedData={event => { if (slideIndex === index) void event.currentTarget.play().catch(() => {}); }}/>
         : <img key={slide.src} className={slideIndex === index ? "active" : ""} src={slide.src} alt={slideIndex === index ? slide.alt : ""} aria-hidden={slideIndex !== index} width={slide.width} height={slide.height}/>)}
     </div>
     <button type="button" className="photo-arrow" onClick={() => change(1)} aria-label="Next photo"><ChevronRight size={36}/></button>

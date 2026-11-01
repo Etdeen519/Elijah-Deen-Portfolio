@@ -4,6 +4,7 @@ import PhotoCarousel from "./photo-carousel";
 import ThemeToggle from "./theme-toggle";
 import ProjectGrid from "./projects/project-grid";
 import { projects } from "./projects/page";
+import ContactLinks from "./contact-links";
 
 const experience = [
   ["2026","Sonoco Products Company","Mechanical Engineering Co-op","Machine design and automation · Hartselle, Alabama"],
@@ -30,12 +31,23 @@ export default function Home() {
     <section className="hero" id="top">
       <div className="hero-copy">
         <h1>Elijah <em>Deen</em></h1>
+        <p className="hero-summary">Mechanical engineer focused on machine design, robotics, and manufacturing. I design, build, and test equipment that solves production problems.</p>
+        <ContactLinks/>
       </div>
       <PhotoCarousel/>
     </section>
 
     <section className="home-projects">
-      <div className="home-grid-heading" id="work"><h2>Projects.</h2><a href={sitePath("/projects")}>View carousel <ArrowUpRight size={20}/></a></div>
+      <div className="home-grid-heading" id="work"><h2>Selected work.</h2><a href="#all-projects">See all projects <ArrowUpRight size={20}/></a></div>
+      <div className="featured-projects">{[projects[0], projects[1], projects[5]].map(project => {
+        const thumbnail = project.images.find(image => !image.video);
+        const path = "caseStudyPath" in project ? project.caseStudyPath : `/?project=${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+        return <a className="featured-project" href={sitePath(path!)} key={project.title}>
+          {thumbnail && <img src={thumbnail.src} alt={thumbnail.alt} loading="lazy"/>}
+          <div><span className="featured-project-meta">{project.category}</span><h3>{project.title} <ArrowUpRight size={20} aria-hidden="true"/></h3><p><strong>{project.result}</strong> {project.resultLabel}</p></div>
+        </a>;
+      })}</div>
+      <div className="home-grid-heading all-projects-heading" id="all-projects"><h2>All projects.</h2><a href={sitePath("/projects")}>View carousel <ArrowUpRight size={20}/></a></div>
       <ProjectGrid projects={projects}/>
     </section>
 
@@ -52,6 +64,7 @@ export default function Home() {
     <footer className="site-footer" id="contact">
       <div className="footer-content">
         <div className="footer-heading"><h2>Next project.</h2><p>Currently exploring full-time mechanical engineering opportunities in product development, robotics, and manufacturing.</p></div>
+        <ContactLinks/>
         <div className="footer-actions"><a className="button button-primary" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">View resume <Download size={18}/></a><a className="footer-link" href="#top">Back to top <ArrowUpRight size={16}/></a></div>
       </div>
       <div className="footer-bottom"><span>ELIJAH T. DEEN</span><span>MECHANICAL ENGINEER</span><span>© 2026</span></div>

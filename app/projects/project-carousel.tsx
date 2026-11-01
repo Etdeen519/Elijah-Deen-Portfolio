@@ -42,7 +42,7 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
       <div className="project-feature-media">
         {project.images.length ? <>
           {project.images[imageIndex].video
-            ? <video key={project.images[imageIndex].src} src={project.images[imageIndex].src} aria-label={project.images[imageIndex].alt} autoPlay muted loop playsInline preload="metadata"/>
+            ? <video key={project.images[imageIndex].src} src={project.images[imageIndex].src} poster={project.images.find(image => !image.video)?.src} aria-label={project.images[imageIndex].alt} autoPlay muted loop playsInline preload="metadata"/>
             : <img key={project.images[imageIndex].src} src={project.images[imageIndex].src} alt={project.images[imageIndex].alt}/>}
           {project.images.length > 1 && <div className="project-photo-controls">
             <button type="button" onClick={() => changeImage(-1)} aria-label={`Previous media of ${project.title}`}><ChevronLeft size={20}/></button>
