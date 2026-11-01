@@ -2,9 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { sitePath } from "../site-path";
 
 type Media = { src: string; alt: string; video?: boolean };
 type Project = {
+  caseStudyPath?: string;
   title: string;
   organization: string;
   description: string;
@@ -59,7 +61,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
       } else if (event.key === "ArrowRight" && media.length > 1) {
         setMediaIndex(current => (current + 1) % media.length);
       } else if (event.key === "Tab" && dialogRef.current) {
-        const buttons = [...dialogRef.current.querySelectorAll<HTMLButtonElement>("button:not([disabled])")];
+        const buttons = [...dialogRef.current.querySelectorAll<HTMLElement>('button:not([disabled]), a[href], video[controls]')];
         const first = buttons[0];
         const last = buttons[buttons.length - 1];
         if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
@@ -102,7 +104,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
         <div className="project-dialog-media">
           {media.length ? <>
             {media[mediaIndex].video
-              ? <video key={media[mediaIndex].src} src={media[mediaIndex].src} aria-label={media[mediaIndex].alt} controls autoPlay muted loop playsInline preload="metadata"/>
+              ? <video key={media[mediaIndex].src} src={media[mediaIndex].src} poster={media.find(item => !item.video)?.src} aria-label={media[mediaIndex].alt} controls autoPlay muted loop playsInline preload="metadata"/>
               : <img key={media[mediaIndex].src} src={media[mediaIndex].src} alt={media[mediaIndex].alt}/>}
             {media.length > 1 && <div className="project-dialog-controls">
               <button type="button" onClick={() => setMediaIndex(current => (current - 1 + media.length) % media.length)} aria-label="Previous project photo or video"><ChevronLeft size={30}/></button>
@@ -118,6 +120,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
           <h2 id="project-dialog-title">{project.title}</h2>
           <p className="project-dialog-description">{project.description}</p>
           <div className="project-dialog-skills">{project.skills.map(skill => <span key={skill}>{skill}</span>)}</div>
+          {project.caseStudyPath && <a className="case-study-link" href={sitePath(project.caseStudyPath)}>View full project <ArrowUpRight size={19} aria-hidden="true"/></a>}
         </div>
       </div>
     </div>}

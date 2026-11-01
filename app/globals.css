@@ -607,6 +607,52 @@ footer .footer-bottom{border-top-color:var(--line)}
 }
 @media(prefers-reduced-motion:reduce){.scroll-position-fill,.scroll-position-thumb{transition:none}}
 
+.case-study-link{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;margin-top:28px;padding:14px 19px;background:var(--maroon);color:#fff;font-size:1rem;font-weight:700;border-radius:4px}
+.case-study-link:hover{background:#6f1521}
+.case-study a:focus-visible{outline:2px solid var(--maroon-soft);outline-offset:5px}
+.case-study-content{max-width:1280px;margin:auto;padding:44px clamp(20px,5vw,72px) 60px}
+.case-study-intro{padding-top:46px}
+.case-study-kicker,.case-study-section-label>span{font:700 .8rem/1.5 "Courier New",monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--maroon-soft)}
+.case-study-intro h1{font-size:clamp(2.8rem,6.6vw,6.3rem);line-height:1.02;letter-spacing:-.06em;margin:20px 0 25px}
+.case-study-deck{max-width:680px;color:var(--muted);font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.6}
+.case-study-facts{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px;border-top:1px solid var(--line);padding-top:26px;margin:38px 0}
+.case-study-facts dt{font:700 .75rem/1.4 "Courier New",monospace;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:10px}
+.case-study-facts dd{margin:0;font-size:1rem;line-height:1.5}
+.case-study-ownership{max-width:780px;margin:0 0 38px}
+.case-study-ownership h2{font-size:1.2rem;letter-spacing:-.02em;margin-bottom:14px}
+.case-study-ownership p{color:var(--muted);font-size:1.03rem;line-height:1.75;margin-bottom:14px}
+.case-study figure{margin:0}
+.case-study figure img,.case-study figure video{display:block;width:100%;max-height:650px;object-fit:contain;background:var(--surface-2)}
+.case-study .case-study-hero-image img{height:clamp(320px,48vw,570px)}
+.case-study figcaption{color:var(--muted);font-size:.88rem;line-height:1.6;margin-top:12px;max-width:650px}
+.case-study-contents{display:flex;flex-wrap:wrap;gap:20px 32px;padding:27px 0;margin-top:34px;border-block:1px solid var(--line);font-size:.75rem}
+.case-study-contents a:hover{color:var(--maroon-soft)}
+.case-study-section{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:clamp(30px,6vw,90px);padding:76px 0;border-bottom:1px solid var(--line);scroll-margin-top:105px}
+.case-study-section h2{font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.1;letter-spacing:-.045em;margin:18px 0 0}
+.case-study-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin:0 0 26px}
+.case-study-body p:last-child{margin-bottom:0}
+.case-study-positions{list-style:none;counter-reset:position;display:grid;gap:0;padding:0;margin:28px 0;border-top:1px solid var(--line)}
+.case-study-positions li{counter-increment:position;display:grid;grid-template-columns:24px 1fr;gap:7px 14px;padding:19px 0;border-bottom:1px solid var(--line)}
+.case-study-positions li:before{content:counter(position,decimal-leading-zero);grid-row:span 2;color:var(--maroon-soft);font:700 .8rem/1.6 "Courier New",monospace}
+.case-study-positions strong{font-size:1.05rem}.case-study-positions span{grid-column:2;color:var(--muted);line-height:1.6}
+.case-study-note{border-left:2px solid var(--maroon-soft);padding:6px 0 6px 22px;margin-top:28px}
+.case-study-note>strong{display:block;color:var(--maroon-soft);font:700 .75rem/1.5 "Courier New",monospace;text-transform:uppercase;margin-bottom:10px}
+.case-study-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-bottom:30px}
+.case-study-results strong{display:block;font-size:clamp(3rem,6vw,5rem);line-height:1.1;letter-spacing:-.06em;color:var(--maroon-soft)}
+.case-study-results span{display:block;color:var(--muted);font-size:.85rem;line-height:1.5;margin-top:8px}
+.case-study-footer{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-top:30px}
+.case-study-footer .case-study-link{margin-top:0}
+.case-study-footer .text-link{display:inline-flex;align-items:center;gap:8px}
+@media(max-width:700px){
+  .case-study .site-header nav{display:none}
+  .case-study .site-header{grid-template-columns:1fr auto}
+  .case-study-intro{padding-top:30px}
+  .case-study-facts{grid-template-columns:1fr;gap:20px}
+  .case-study-section{grid-template-columns:1fr;gap:27px;padding:48px 0}
+  .case-study-contents{gap:18px;font-size:.7rem;line-height:1.5}
+  .case-study-footer{align-items:flex-start;flex-direction:column}
+}
+
 /* Update 07: leave the home layout open after removing the scroll rail. */
 @media(min-width:1101px){
   .hero{padding-left:clamp(28px,6vw,100px)}

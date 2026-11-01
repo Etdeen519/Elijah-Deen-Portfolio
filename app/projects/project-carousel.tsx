@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { sitePath } from "../site-path";
 
 type Project = {
+  caseStudyPath?: string;
   title: string;
   organization: string;
   description: string;
@@ -56,6 +58,7 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
         <h2>{project.title}</h2>
         <p>{project.description}</p>
         <div className="tag-row">{project.skills.map(skill => <span key={skill}>{skill}</span>)}</div>
+        {project.caseStudyPath && <a className="case-study-link" href={sitePath(project.caseStudyPath)}>View full project →</a>}
       </div>
     </article>
     <div className="project-navigation">

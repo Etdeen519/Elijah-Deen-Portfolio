@@ -8,6 +8,7 @@ import ProjectCarousel from "./project-carousel";
 export const projects = [ /* video-first-projects */
   {
     title: "Flange Alignment Gripper Tool",
+    caseStudyPath: "/projects/flange-alignment-gripper-tool/",
     organization: "Sonoco · 2026",
     category: "Machine Design",
     description: "Designed, fabricated, and installed a pneumatic gripper to keep wooden flanges aligned as they enter the nailer. It mounts to the existing pusher and operates on two production lines, three shifts a day, five days a week.",
