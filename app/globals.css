@@ -606,3 +606,19 @@ footer .footer-bottom{border-top-color:var(--line)}
   .site-footer .footer-bottom{margin-top:70px}
 }
 @media(prefers-reduced-motion:reduce){.scroll-position-fill,.scroll-position-thumb{transition:none}}
+
+/* Update 07: leave the home layout open after removing the scroll rail. */
+@media(min-width:1101px){
+  .hero{padding-left:clamp(28px,6vw,100px)}
+  .home-projects{padding-left:clamp(28px,6vw,100px)}
+  .section,.site-footer{padding-left:clamp(28px,6vw,100px)}
+}
+/* Apply color changes together during a user-initiated theme switch. */
+html.theme-changing body,html.theme-changing body *{
+  transition-property:background-color,color,border-color,box-shadow,fill,stroke!important;
+  transition-duration:.5s!important;
+  transition-timing-function:ease!important;
+}
+@media(prefers-reduced-motion:reduce){
+  html.theme-changing body,html.theme-changing body *{transition:none!important}
+}

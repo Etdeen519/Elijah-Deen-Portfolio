@@ -3,7 +3,6 @@ import { ArrowUpRight, Download } from "lucide-react";
 import PhotoCarousel from "./photo-carousel";
 import ThemeToggle from "./theme-toggle";
 import ProjectGrid from "./projects/project-grid";
-import SectionRail from "./section-rail";
 import { projects } from "./projects/page";
 
 const experience = [
@@ -22,7 +21,6 @@ const workSteps = [
 
 export default function Home() {
   return <main>
-    <SectionRail/>
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="Elijah Deen, home">Elijah <span>Deen</span></a>
       <nav aria-label="Primary navigation"><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#about">About</a></nav>
