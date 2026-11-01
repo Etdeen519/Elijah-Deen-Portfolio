@@ -2,7 +2,7 @@ import { ArrowUpRight, Mail } from "lucide-react";
 
 export const contact = {
   email: "Etdeen519@gmail.com",
-  linkedin: null as string | null,
+  linkedin: "https://www.linkedin.com/in/elijah-t-deen/",
 };
 
 export default function ContactLinks() {
