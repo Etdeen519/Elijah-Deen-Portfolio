@@ -33,7 +33,16 @@ export default function GripperCaseStudy() {
       <nav className="case-study-contents" aria-label="On this page"><a href="#problem">01 / Problem</a><a href="#integration">02 / Assembly</a><a href="#configurations">03 / Three positions</a><a href="#manifold">04 / Pneumatics and controls</a><a href="#cylinders">05 / Cylinder adjustment</a><a href="#operation">06 / Installation and use</a></nav>
       <section className="case-study-section" id="problem">
         <div className="case-study-section-label"><span>01</span><h2>Problem</h2></div>
-        <div className="case-study-body"><p>The existing flat pusher allowed wooden flanges to shift sideways as they entered the nailer, causing off-center nails. The clamp needed to mount to the existing introducer, grip the flange above the table, and retract beneath it when not in use.</p><div className="problem-video-space" role="img" aria-label="Video of the original introducer will be added here"><span>Before the gripper</span><p>Original introducer video coming soon.</p></div></div>
+        <div className="case-study-body">
+          <p>The existing flat pusher allowed wooden flanges to shift sideways as they entered the nailer, causing off-center nails. The clamp needed to mount to the existing introducer, grip the flange above the table, and retract beneath it when not in use.</p>
+          <figure>
+            <video controls playsInline preload="none" poster={sitePath("/projects/gallery/introducer-line-3-before.jpg")} aria-label="Line 3 introducer before the gripper installation">
+              <source src={sitePath("/projects/gallery/introducer-line-3-before.mp4")} type="video/mp4"/>
+              Your browser does not support video playback.
+            </video>
+            <figcaption>Line 3 before installation</figcaption>
+          </figure>
+        </div>
       </section>
       <section className="case-study-section" id="integration">
         <div className="case-study-section-label"><span>02</span><h2>Assembly</h2></div>
@@ -56,7 +65,17 @@ export default function GripperCaseStudy() {
       </section>
       <section className="case-study-section" id="operation">
         <div className="case-study-section-label"><span>06</span><h2>Installation and use</h2></div>
-        <div className="case-study-body"><p>I checked the gripper’s motion during installation. Two grippers are in use, and a Texas installation is planned.</p><GripperProduction/><figure><video controls playsInline preload="none" poster={sitePath("/projects/gallery/clamp-on-introducer.jpeg")} aria-label="Flange alignment gripper operating on the nailer"><source src={sitePath("/projects/gallery/clamp-first-video.mp4")} type="video/mp4"/>Your browser does not support video playback.</video><figcaption>Gripper in operation</figcaption></figure></div>
+        <div className="case-study-body">
+          <p>I checked the gripper’s motion during installation. Two grippers are in use, and a Texas installation is planned.</p>
+          <GripperProduction/>
+          <figure>
+            <video controls playsInline preload="none" poster={sitePath("/projects/gallery/introducer-line-3-after.jpg")} aria-label="Line 3 introducer after the gripper installation">
+              <source src={sitePath("/projects/gallery/introducer-line-3-after.mp4")} type="video/mp4"/>
+              Your browser does not support video playback.
+            </video>
+            <figcaption>Line 3 after installation</figcaption>
+          </figure>
+        </div>
       </section>
       <footer className="case-study-footer"><a className="case-study-link" href={sitePath("/#work")}><ArrowLeft size={18}/> Explore more projects</a><a className="text-link" href={sitePath("/Elijah-Deen-Resume.pdf")} target="_blank" rel="noreferrer">View resume <ArrowUpRight size={16}/></a></footer>
       <ContactLinks/>
