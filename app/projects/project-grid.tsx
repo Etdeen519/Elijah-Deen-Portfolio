@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { sitePath } from "../site-path";
 
-type Media = { src: string; alt: string; video?: boolean };
+type Media = { src: string; alt: string; video?: boolean; caption?: string };
 type Project = {
   caseStudyPath?: string;
   category?: string;
@@ -117,6 +117,7 @@ export default function ProjectGrid({ projects, featuredTitles = [] }: { project
       <div className="project-dialog" role="dialog" aria-modal="true" aria-labelledby="project-dialog-title" ref={dialogRef}>
         <button className="project-dialog-close" type="button" ref={closeRef} onClick={() => setSelected(null)} aria-label="Close project"><X size={26}/></button>
         <div className="project-dialog-media">
+          {media[mediaIndex]?.caption && <p className="project-dialog-media-caption" aria-live="polite">{media[mediaIndex].caption}</p>}
           {media.length ? <>
             {media[mediaIndex].video
               ? <video key={media[mediaIndex].src} src={media[mediaIndex].src} poster={media.find(item => !item.video)?.src} aria-label={media[mediaIndex].alt} controls autoPlay muted loop playsInline preload="metadata"/>

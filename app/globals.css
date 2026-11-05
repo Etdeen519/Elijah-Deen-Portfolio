@@ -469,6 +469,7 @@ footer .footer-bottom{border-top-color:var(--line)}
 .project-dialog-media{position:relative;display:grid;place-items:center;min-width:0;min-height:0;background:var(--surface-2);padding:22px 22px 76px}
 .project-dialog-media>img,.project-dialog-media>video{display:block;width:100%;height:100%;max-height:calc(min(850px,100dvh - 28px) - 98px);object-fit:contain}
 .project-dialog-controls{position:absolute;bottom:16px;left:18px;right:18px;display:flex;align-items:center;justify-content:center;gap:16px}
+.project-dialog-media-caption{position:absolute;z-index:1;top:18px;left:18px;right:64px;width:fit-content;max-width:calc(100% - 82px);margin:0;padding:8px 12px;background:var(--surface);color:var(--ink);font-size:.85rem;line-height:1.4}
 .project-dialog-controls>button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:none;color:var(--ink);cursor:pointer}
 .project-dialog-controls>button:hover{color:var(--maroon-soft)}
 .project-dialog-dots{display:flex;align-items:center;gap:6px;max-width:60%;overflow:auto}
@@ -629,6 +630,17 @@ footer .footer-bottom{border-top-color:var(--line)}
 .case-study-contents a:hover{color:var(--maroon-soft)}
 .case-study-section{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:clamp(30px,6vw,90px);padding:76px 0;border-bottom:1px solid var(--line);scroll-margin-top:105px}
 .case-study-section h2{font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.1;letter-spacing:-.045em;margin:18px 0 0}
+.gripper-cad-positions,.gripper-cad-details{grid-column:1/-1;display:grid;gap:24px}
+.case-study-section#integration{row-gap:36px}
+.gripper-cad-positions{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gripper-cad-details{grid-template-columns:repeat(2,minmax(0,1fr))}
+.case-study .gripper-cad-figure img{aspect-ratio:1;object-fit:contain;background:#b9c7d7}
+.case-study .gripper-cad-details img{aspect-ratio:16/10}
+.case-study-body>.gripper-cad-figure img{aspect-ratio:16/10}
+.gripper-cad-figure a{display:block;cursor:zoom-in}
+.gripper-cad-figure figcaption strong{display:block;color:var(--ink);font-weight:600}
+.gripper-cad-figure figcaption span{display:block;margin-top:4px}
+@media(max-width:700px){.gripper-cad-positions,.gripper-cad-details{grid-template-columns:1fr}.case-study .gripper-cad-figure img{max-height:450px}}
 .case-study-body p{font-size:1.1rem;line-height:1.8;color:var(--muted);margin:0 0 26px}
 .case-study-body p:last-child{margin-bottom:0}
 .case-study-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-bottom:30px}

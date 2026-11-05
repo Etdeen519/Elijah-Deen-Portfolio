@@ -1,4 +1,5 @@
 import { sitePath } from "../site-path";
+import { gripperCadMedia } from "./gripper-cad";
 
 
 
@@ -12,7 +13,7 @@ export const projects = [ /* video-first-projects */
     skills: ["Inventor", "Pneumatics", "FEA"],
     result: "2 LINES",
     resultLabel: "installed in production",
-    images: [{src:sitePath("/projects/gallery/clamp-first-video.mp4"),alt:"Automated nailer clamp operation video",video:true},{src:sitePath("/projects/gallery/clamp-close-iso.jpeg"),alt:"Fabricated automated nailer clamp from above"},{src:sitePath("/projects/gallery/clamp-on-introducer.jpeg"),alt:"Automated nailer clamp installed on the introducer"},{src:sitePath("/projects/gallery/clamp-portrait.mp4"),alt:"Short portrait video of the automated nailer clamp",video:true}],
+    images: [{src:sitePath("/projects/gallery/clamp-first-video.mp4"),alt:"Automated nailer clamp operation video",video:true},{src:sitePath("/projects/gallery/clamp-close-iso.jpeg"),alt:"Fabricated automated nailer clamp from above"},...gripperCadMedia,{src:sitePath("/projects/gallery/clamp-on-introducer.jpeg"),alt:"Automated nailer clamp installed on the introducer"},{src:sitePath("/projects/gallery/clamp-portrait.mp4"),alt:"Short portrait video of the automated nailer clamp",video:true}],
   },
   {
     title: "Integrated Motor Conveyor",

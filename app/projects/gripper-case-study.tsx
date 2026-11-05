@@ -3,6 +3,11 @@ import ThemeToggle from "../theme-toggle";
 import { sitePath } from "../site-path";
 import ContactLinks from "../contact-links";
 import GripperProduction from "./gripper-production";
+import { gripperAssembly, gripperPositions, gripperDetails } from "./gripper-cad";
+
+function CadFigure({ image }: { image: { src: string; alt: string; caption: string; detail?: string } }) {
+  return <figure className="gripper-cad-figure"><a href={image.src} target="_blank" rel="noreferrer" aria-label={`Enlarge: ${image.alt}`}><img src={image.src} alt={image.alt} loading="lazy"/></a><figcaption><strong>{image.caption}</strong>{image.detail && <span>{image.detail}</span>}</figcaption></figure>;
+}
 
 export default function GripperCaseStudy() {
   return <main className="case-study">
@@ -33,8 +38,10 @@ export default function GripperCaseStudy() {
       <section className="case-study-section" id="integration">
         <div className="case-study-section-label"><span>02 / Design</span><h2>One fixture. Three positions.</h2></div>
         <div className="case-study-body"><p>I designed a pneumatic mechanism with recessed, open, and clamped positions, sizing the cylinders from the required clamping force. I measured the existing equipment and built in height adjustment to fine-tune the fit during installation.</p>
-          <figure><img src={sitePath("/projects/gallery/clamp-on-introducer.jpeg")} alt="Flange alignment gripper mounted on the existing introducer" loading="lazy"/><figcaption>The gripper mounted to the existing introducer.</figcaption></figure>
+          <CadFigure image={gripperAssembly}/>
         </div>
+        <div className="gripper-cad-positions" aria-label="Three gripper configurations">{gripperPositions.map(image => <CadFigure key={image.src} image={image}/>)}</div>
+        <div className="gripper-cad-details" aria-label="Pneumatic design details">{gripperDetails.map(image => <CadFigure key={image.src} image={image}/>)}</div>
       </section>
       <section className="case-study-section" id="operation">
         <div className="case-study-section-label"><span>03 / In production</span><h2>Built, tested, and installed.</h2></div>
