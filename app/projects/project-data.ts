@@ -1,5 +1,5 @@
 import { sitePath } from "../site-path";
-import { gripperCadMedia } from "./gripper-cad";
+import { gripperAssembly } from "./gripper-cad";
 
 
 
@@ -13,7 +13,7 @@ export const projects = [ /* video-first-projects */
     skills: ["Inventor", "Pneumatics", "FEA"],
     result: "2 LINES",
     resultLabel: "installed in production",
-    images: [{src:sitePath("/projects/gallery/clamp-first-video.mp4"),alt:"Automated nailer clamp operation video",video:true},{src:sitePath("/projects/gallery/clamp-close-iso.jpeg"),alt:"Fabricated automated nailer clamp from above"},...gripperCadMedia,{src:sitePath("/projects/gallery/clamp-on-introducer.jpeg"),alt:"Automated nailer clamp installed on the introducer"},{src:sitePath("/projects/gallery/clamp-portrait.mp4"),alt:"Short portrait video of the automated nailer clamp",video:true}],
+    images: [{src:sitePath("/projects/gallery/clamp-first-video.mp4"),alt:"Automated nailer clamp operation video",video:true},{src:sitePath("/projects/gallery/clamp-close-iso.jpeg"),alt:"Fabricated automated nailer clamp from above"},gripperAssembly,{src:sitePath("/projects/gallery/clamp-on-introducer.jpeg"),alt:"Automated nailer clamp installed on the introducer"},{src:sitePath("/projects/gallery/clamp-portrait.mp4"),alt:"Short portrait video of the automated nailer clamp",video:true}],
   },
   {
     title: "Integrated Motor Conveyor",
@@ -37,7 +37,7 @@ export const projects = [ /* video-first-projects */
     resultLabel: "design and fabrication work",
     image: sitePath("/projects/truck-scale.png"),
     alt: "CAD model of the rear axle truck scale",
-    images: [{src:sitePath("/projects/truck-scale.png"),alt:"CAD model of the rear axle truck scale"},{src:sitePath("/projects/gallery/truck-assembly.png"),alt:"Full assembly CAD model of the truck scale"},{src:sitePath("/projects/gallery/truck-linkage.png"),alt:"Exploded view of the truck scale linkage"}],
+    images: [{src:sitePath("/projects/truck-scale.png"),alt:"CAD model of the rear axle truck scale"},{src:sitePath("/projects/gallery/truck-scale-fabrication.jpg"),alt:"Fabricated rear axle truck scale with a steel load supported by a forklift"},{src:sitePath("/projects/gallery/truck-linkage.png"),alt:"Exploded view of the truck scale linkage"}],
   },
   {
     title: "Holtec Lumber Frame for Rebundling",
